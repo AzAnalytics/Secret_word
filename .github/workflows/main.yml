@@ -11,6 +11,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    - name: Installer les dépendances
+      run: pip install pymongo
+
     - name: Exécuter le script
       env:
         MONGO_USER: ${{ secrets.MONGO_USER }}
