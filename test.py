@@ -3,7 +3,7 @@ import os
 
 try:
 
-    user = os.environ.get("MONGO_USER")
+    user = str(os.environ.get("MONGO_USER"))
     password = os.environ.get("MONGO_PASSWORD")
     host = os.environ.get("MONGO_HOST")
     dbname = os.environ.get("MONGO_DBNAME")
