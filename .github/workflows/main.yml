@@ -12,8 +12,16 @@ jobs:
       with:
         python-version: '3.x'
         url : ${{ secrets.CONNEXION }}
-    - name: Installer les dépendances
-      run: pip install pymongo
+    - name: Update SSL Certificates
+      run: sudo apt-get update && sudo apt-get install -y ca-certificates
+
+    - name: Update certifi
+      run: pip install --upgrade certifi
+
+    - name: Install dependencies
+      run: |
+        pip install pymongo
+        pip install yfinance
 
     - name: Exécuter le script
       env:
